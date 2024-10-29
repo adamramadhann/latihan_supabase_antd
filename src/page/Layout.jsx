@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
 import React from 'react'
 import supabase from '../supabase'
-import { Button, Table } from 'antd'
+import { Button, Space, Table } from 'antd'
 import Column from 'antd/es/table/Column'
 
 const Layout = () => {
@@ -40,10 +40,10 @@ const column = [
   title : "Action",
   render : (e) => {
       return (
-          <div className=' flex gap-3 '>
+          <Space className=''>
               <Button type='primary' htmlType='submit' onClick={() => handleOpenModal(e)} >Edit</Button>
               <Button type='secondary' className='bg-red-500 text-white' onClick={() => handleDelete(e.id)} >Delete</Button>
-          </div>
+          </Space>
       )
   }
 },
@@ -65,6 +65,7 @@ const column = [
       columns={column}
       rowKey={'id'}
       dataSource={data}
+      className='text-center border'
       />
     </div>
   )
