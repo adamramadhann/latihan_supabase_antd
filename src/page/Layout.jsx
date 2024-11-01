@@ -1,4 +1,3 @@
-import { useQuery } from '@tanstack/react-query'
 import React from 'react'
 import supabase from '../supabase'
 import { Button, Space, Table } from 'antd'
@@ -49,18 +48,8 @@ const column = [
 },
 ]
 
-
-
   return (
     <div>
-      <form>
-      
-      </form>
-      {/* {
-        data?.map((e) => (
-          <h1>{e.id}</h1>
-        ))
-      } */}
       <Table
       columns={column}
       rowKey={'id'}
