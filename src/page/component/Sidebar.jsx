@@ -7,7 +7,7 @@ import {
   VideoCameraOutlined,
 } from '@ant-design/icons';
 import { Button, Layout, Menu, Table, theme, Space } from 'antd';
-import { useLocation, useNavigate } from 'react-router-dom'; // Import useLocation dan useNavigate
+import { useLocation } from 'react-router-dom'; // Import useLocation
 const { Header, Sider, Content } = Layout;
 
 const Sidebar = () => {
@@ -17,7 +17,6 @@ const Sidebar = () => {
   } = theme.useToken();
 
   const location = useLocation(); // Dapatkan lokasi saat ini
-  const navigate = useNavigate(); // Inisialisasi navigate
   const currentPath = location.pathname; // Ambil path saat ini
 
   const column = [
@@ -57,11 +56,6 @@ const Sidebar = () => {
     // Tambahkan item lain jika perlu
   ];
 
-  // Fungsi untuk menangani klik pada item menu
-  const handleMenuClick = (e) => {
-    navigate(e.key); // Navigasi ke rute yang dipilih
-  };
-
   return (
     <Layout>
       <Sider trigger={null} collapsible collapsed={collapsed}>
@@ -71,8 +65,7 @@ const Sidebar = () => {
           mode="inline"
           className='h-screen pt-10'
           selectedKeys={[currentPath]}
-          items={menuItems}
-          onClick={handleMenuClick} // Tambahkan penanganan klik di sini
+          items={menuItems} // Gunakan items
         />
       </Sider>
       <Layout>
