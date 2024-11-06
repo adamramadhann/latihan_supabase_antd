@@ -11,14 +11,7 @@ const LatihaSidebarAntd = () => {
                     theme='dark'
                     mode='inline' 
                     className='h-screen'
-                    defaultOpenKeys={[1]}
-                    items={[
-                        {
-                            key:'1',
-                            icon: "",
-                            label : "home page"
-                        }
-                    ]}
+                    defaultOpenKeys={[curren]}
                     >
 
                     </Menu>
